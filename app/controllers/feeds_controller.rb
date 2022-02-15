@@ -32,7 +32,6 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(feed_params)
     @feed.user_id = current_user.id
-
     respond_to do |format|
       if @feed.save
         format.html { redirect_to feed_url(@feed), notice: "Feed was successfully created." }
@@ -60,7 +59,6 @@ class FeedsController < ApplicationController
   # DELETE /feeds/1 or /feeds/1.json
   def destroy
     @feed.destroy
-
     respond_to do |format|
       format.html { redirect_to feeds_url, notice: "Feed was successfully destroyed." }
       format.json { head :no_content }
@@ -75,6 +73,6 @@ class FeedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def feed_params
-      params.require(:feed).permit(:image, :image_cache, :user_id)
+      params.require(:feed).permit(:image, :content, :image_cache, :user_id)
     end
 end
