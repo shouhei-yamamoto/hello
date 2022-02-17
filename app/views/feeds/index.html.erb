@@ -2,9 +2,8 @@
 
 <h1>Feeds</h1>
 
-<table>
+<table align = "center">
   <thead>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <tr>
       <th>Image</th>
       <th>コメント</th>
@@ -15,7 +14,7 @@
 
   <tbody>
     <% @feeds.each do |feed| %>
-      <tr>
+      <tr class = "box">
         <td><%= image_tag feed.image.url %></td>
         <td><%= feed.content %></td>
         <td><%= feed.user.name %></td>
@@ -26,6 +25,7 @@
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 
